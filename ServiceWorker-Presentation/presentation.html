@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js – The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+
+    <style>
+        img {
+            width: 65%;
+        }
+
+        blockquote footer {
+            text-align: right;
+            margin-right: 1em !important;
+        }
+
+        p {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <section>
+            <h1>Angular 5, Progressive Web Apps, and Service Workers</h1>
+        </section>
+
+        <section>
+            <section id="fragments">
+                <h2>What exactly is a PWA?</h2>
+                <p>
+                    A Progressive Web Apps is a web app that has user experiences that are:
+                </p>
+                <section class="fragment fade-up">
+                    <ul>
+                        <li>reliable - Load instantly and never show the downasaur, even in uncertain network
+                            conditions
+                        </li>
+                        <li>fast - Respond quickly to user interactions with silky smooth animations and no janky
+                            scrolling
+                        </li>
+                        <li>
+                            engaging - Feel like a natural app on the device, with an immersive user experience
+                        </li>
+                    </ul>
+                </section>
+                <aside class="notes">
+                    <ul>
+                        <li>reliable - Load instantly and never show the downasaur, even in uncertain network
+                            conditions
+                        </li>
+                        <li>fast - Respond quickly to user interactions with silky smooth animations and no janky
+                            scrolling
+                        </li>
+                        <li>
+                            engaging - Feel like a natural app on the device, with an immersive user experience
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>PWAs are Reliable</h2>
+                <p>
+                    When launched from the user’s home screen, service workers enable a PWA
+                    to load instantly, regardless of the network state.
+                </p>
+                <img src="https://developers.google.com/web/progressive-web-apps/images/pwa-reliable.png">
+
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            When launched from the user’s home screen, service workers enable a PWA
+                            to load instantly, regardless of the network state.
+                        </li>
+                    </ul>
+
+                </aside>
+
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>PWAs are Fast</h2>
+                <p>
+                    53% of users will abandon a site if it takes longer than 3 seconds to load!
+                </p>
+                <img src="https://developers.google.com/web/progressive-web-apps/images/pwa-fast.png">
+
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            53% of users will abandon a site if it takes longer than 3 seconds to load!
+                        </li>
+                        <li>
+                            And once loaded, users
+                            expect them to be fast—no janky scrolling or slow-to-respond interfaces.
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>PWAs are Engaging</h2>
+                <ul>
+                    <li>are installable and live on the home screen</li>
+                    <li>do not need an app store</li>
+                    <li>offer an immersive full screen experience</li>
+                </ul>
+
+                <img src="https://developers.google.com/web/progressive-web-apps/images/pwa-engaging.png">
+
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            Progressive Web Apps are installable and live on the user's home screen, without the need
+                            for an appstore.
+                        </li>
+                        <li>
+                            They offer an immersive full screen experience with help from a web app manifest file and
+                            can even
+                            re-engage users with web push notifications.
+                        </li>
+                        <li>
+                            The Web App Manifest allows you to control how your app appears and how it's launched. You
+                            can specify home screen icons, the page to load when the app is launched, screen
+                            orientation,and even whether or not to show the browser chrome.
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <h2>PWA Checklist</h2>
+            <ul>
+                <li>site is served over HTTPS</li>
+                <li>pages are responsive on tablets & mobile devices</li>
+                <li>all app URLs load while offline</li>
+                <li>metadata provided for Add to Home screen</li>
+            </ul>
+
+            <aside class="notes">
+                <ul>
+                    <li>site is served over HTTPS
+                        <ul>
+                            <li>note: there is a very limited exception for localhost</li>
+                        </ul>
+                    </li>
+                    <li>pages are responsive on tablets & mobile devices</li>
+                    <li>all app URLs load while offline</li>
+                    <li>metadata provided for Add to Home screen</li>
+                </ul>
+            </aside>
+
+        </section>
+
+        <section>
+            <h2>PWA Checklist - continued</h2>
+            <ul>
+                <li>first load fast even on 3G</li>
+                <li>site works cross-browser</li>
+                <li>page transitions don't feel like they block on the network</li>
+                <li>each page has a URL</li>
+            </ul>
+            <br><br>
+            <small>For those who like to go above and beyond, check out the
+                <a href="https://developers.google.com/web/progressive-web-apps/checklist#exemplary">
+                    Exemplary PWA Checklist
+                </a>
+            </small>
+
+
+            <aside class="notes">
+                <ul>
+                    <li>first load fast even on 3G</li>
+                    <li>site works cross-browser</li>
+                    <li>page transitions don't feel like they block on the network</li>
+                    <li>each page has a URL</li>
+                </ul>
+
+                <p>For those who like to go above and beyond, check out the Exemplary PWA Checklist
+                </p>
+            </aside>
+        </section>
+
+        <section>
+            <h1>Service Workers</h1>
+            <aside class="notes">
+                <p>Service Workers am i right?</p>
+                <p>Really though...Much of the promises mad be PWAs are achived by the arrival of service workers</p>
+            </aside>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>What exactly is a Service Worker?</h2>
+                <p>...and what can it do</p>
+                <ul>
+                    <li>A service worker is a script (JS) that your browser runs in the background</li>
+                    <li>intercept and handle network requests to manage a cache of responses</li>
+                    <li>push notifications</li>
+                    <li>background sync</li>
+                    <li>periodic sync and geofencing (future)</li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>A service worker is a script (JS) that your browser runs in the background</li>
+                        <li>it is separate from the web page</li>
+                        <li>It can...</li>
+                        <li>
+                            intercept and handle network requests to manage a cache of responses,
+                            think of it as a client-side proxy and puts you in control
+                            of the cache and how to respond to resource requests by pre-caching key resources you can
+                            eliminate the dependence on the network, ensuring an instant and reliable experience for
+                            your users.
+                        </li>
+                        <li>Today, they already include features like push notifications and background sync</li>
+                        <li>
+                            In the future, service workers will support other things like
+                            <ul>
+                                <li>periodic sync</li>
+                                <li>geofencing</li>
+                            </ul>
+                        </li>
+                        <li>The core feature discussed in this presentation is the ability to
+                            intercept and handle network requests
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Other Characteristics of a Service Worker</h2>
+                <ul>
+                    <li>it can't access the DOM directly</li>
+                    <li>it's terminated when not in use</li>
+                    <li>they make extensive use of promises</li>
+                    <li>they are basically a programmable network proxy</li>
+                </ul>
+                <br>
+                <img src="https://glue-labs.com/wp-content/uploads/2016/03/aaa9.png">
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            it can't access the DOM directly...Instead, a service worker can communicate with the pages
+                            it controls by responding to
+                            messages sent via the postMessage interface, and those pages can manipulate the
+                            DOM if needed
+                        </li>
+                        <li>
+                            It's terminated when not in use, and restarted when it's next needed, so you cannot rely
+                            on global state within a service worker's onfetch and onmessage handlers.
+                        </li>
+                        <li>
+                            service workers make extensive use of promises, so for those who are new to promises,
+                            you shoud read up a bit before going too far
+                        </li>
+                        <li>
+                            a service worker is essentially a programmable network proxy
+                            this allows you to control how network requests from your page are handled
+                        </li>
+                        <li>
+                            If there is information that you need to persist and reuse across restarts, service workers
+                            do have access to the IndexedDB API
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>So can we user Service Workers?</h2>
+                <img src="assets/img/caniuse.png" style="width: 100%;">
+
+                <aside class="notes">
+                    So can we user Service Workers?
+                    <p>
+                        I say "yes we can!" Wile they are not fully supported by all browsers, those who cant use them
+                        should still work, they just dont get all the benefits </p>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Where does the Angular framework come into play</h2>
+                <img src="https://angularfirebase.com/images/thumbs/ngsw-13.png">
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Service Workers & NG5 - Requirements</h2>
+                uihuih
+
+                <aside class="notes">
+
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Caching Notes</h2>
+                <ul>
+                    <li>The amount of space is governed by the origin</li>
+                    <li>The amount you get isn't spec'd</li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            Your origin is given a certain amount of free space to do what it wants with.
+                            That free space is shared between all
+                            origin storage: LocalStorage, IndexedDB, Filesystem, and of course Caches.
+                        </li>
+                        <li>
+                            The amount you get isn't spec'd, it will differ depending on device and storage conditions.
+                        </li>
+                        <li>
+                            Ofcourse, like all browser storage, the browser is free to throw it away if the device
+                            becomes under
+                            storage pressure.
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>What can be Cached</h2>
+                <ul>
+                    <li>
+                        assets such as images, and json files
+                    </li>
+                    <li>
+                        code, modules including dependencies
+                    </li>
+                    <li>
+                        External things like content from a CDN
+                    </li>
+                    <li>
+                        api data
+                    </li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            assets such as images, and json files
+                        </li>
+                        <li>
+                            code, modules including dependencies
+                        </li>
+                        <li>
+                            External things like content from a CDN
+                        </li>
+                        <li>
+                            api data
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Caching Strategies</h2>
+                <ul>
+                    <li>
+                        Cache for Performance
+                    </li>
+                    <li>
+                        Cache for Freshness
+                    </li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Notes on caching for performance here</li>
+                        <li>Notes on caching for freshness here</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Service Workers & Pinnacol Projects</h2>
+                <p>So what now? How easy will it be to add service workers to our projects? Certs? Alerts? AQ?</p>
+
+                <aside class="notes">
+                    <h2>Service Workers & Pinnacol Projects</h2>
+                    <p>So what now? How easy will it be to add service workers to our projects? Certs? Alerts? AQ?</p>
+                </aside>
+            </section>
+        </section>
+
+
+        <section>
+            <section class="slide">
+                <h2>Service Workers & Pinnacol Projects</h2>
+                <p>Archecture will be key both on the UI and API side</p>
+
+                <ul>
+                    <li>adjust app behaviors based on network availability</li>
+                    <li>cache assets</li>
+                    <li>cache code/modules</li>
+                    <li>cache api data</li>
+                    <li>queue updates?</li>
+                    <li>push notifications</li>
+                </ul>
+
+                <aside class="notes">
+                    <h2>Service Workers & Pinnacol Projects</h2>
+                    <p>Archecture will be key both on the UI and API side</p>
+
+                    <ul>
+                        <li>adjust app behaviors based on network availability</li>
+                        <li>cache assets</li>
+                        <li>cache code/modules</li>
+                        <li>cache api data</li>
+                        <li>queue updates?</li>
+                        <li>push notifications</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h1>Questions?</h1>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h1>Demo Time!</h1>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                How do we know if offline?
+                - Didn’t see a great way to know this, we don’t just want to know if offline, aka error interceptor, we
+                want
+                to know when we are back online
+                - I had to trap the error from my request and update an online bool in the component
+
+                How do we structure apps for PWA’s?
+                - URL’s should contain everything needed to address the specific data
+                —- example cookie containing policy info is not ideal.
+                —- true resource based REST makes this work much better with resources having a immutable address
+                —- try to cut down on unneeded data for the sake of storage space and transit payload payload size
+
+                - SW will not start if interval is used :(
+                - Routing was an issue…. Perhaps still is for deep linking
+            </section>
+        </section>
+
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+            {src: 'plugin/search/search.js', async: true},
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>
