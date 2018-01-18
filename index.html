@@ -337,17 +337,6 @@
 
         <section>
             <section class="slide">
-                <h2>Service Workers & NG5 - Requirements</h2>
-                uihuih
-
-                <aside class="notes">
-
-                </aside>
-            </section>
-        </section>
-
-        <section>
-            <section class="slide">
                 <h2>Caching Notes</h2>
                 <ul>
                     <li>The amount of space is governed by the origin</li>
@@ -413,28 +402,278 @@
 
         <section>
             <section class="slide">
-                <h2>Caching Strategies</h2>
+                <h2>Service Workers & NG5</h2>
+                a new day
+
+                <p>As of version 5, Angular ships with a service worker!!!</p>
+                <img src="https://cdn-images-1.medium.com/max/1600/1*75SOUIEW4izzHUoSYmxnTg.png">
+
+                <aside class="notes">
+                    <p>As of version 5, Angular ships with a service worker!!! We can use it to provide increased
+                        reliability and performance to our stakeholders</p>
+                </aside>
+            </section>
+        </section>
+
+
+        <section>
+            <section class="slide">
+
+                <p>designed to meet the following goals:</p>
                 <ul>
                     <li>
-                        Cache for Performance
+                        Caching an application is like installing a native application
                     </li>
                     <li>
-                        Cache for Freshness
+                        A running application continues to run with the same version of all files
                     </li>
+                    <li>
+                        When users refresh the application, they see the latest fully cached version
+                    </li>
+                    <li>
+                        Updates happen in the background, relatively quickly after changes are published
+                    </li>
+                    <li>
+                        The service worker conserves bandwidth when possible
+                    </li>
+                </ul>
+                <aside class="notes">
+                    The Angular service worker's has been designed to meet the following goals:
+                    <ul>
+                        <li>
+                            Caching an application is like installing a native application. The application is
+                            cached as one unit, and all files update together
+                        </li>
+                        <li>
+                            A running application continues to run with the same version of all files. It does not
+                            suddenly start receiving cached files from a newer version, which are likely incompatible
+                        </li>
+                        <li>
+                            When users refresh the application, they see the latest fully cached version. New tabs
+                            load the latest cached code
+                        </li>
+                        <li>Updates happen in the background, relatively quickly after changes are published.
+                            The previous version of the application is served until an update is installed and ready
+                        </li>
+                        <li>
+                            The service worker conserves bandwidth when possible. Resources are only downloaded
+                            if they've changed
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+
+        <section>
+            <section class="slide">
+                <h2>Service Workers & NG5</h2>
+                Requirements<br><br>
+
+                <p>To use Angular service workers, you must have the following:</p>
+                <ul>
+                    <li>Angular 5.0.0 or later</li>
+                    <li>Angular CLI 1.6.0 or later</li>
+                    <li>Browser that supports service workers (Chrome/Firefox)</li>
                 </ul>
 
                 <aside class="notes">
+                    To use Angular service workers, you must have the following:
+
                     <ul>
-                        <li>Notes on caching for performance here</li>
-                        <li>Notes on caching for freshness here</li>
+                        <li>Angular 5.0.0 or later</li>
+                        <li>Angular CLI 1.6.0 or later</li>
+                        <li>Browser that supports service workers (Chrome/Firefox)</li>
                     </ul>
+
+                    Your application must run in a web browser that supports service workers. Currently,
+                    the latest versions of Chrome and Firefox are supported.
                 </aside>
             </section>
         </section>
 
         <section>
             <section class="slide">
-                <h2>Service Workers & Pinnacol Projects</h2>
+                <h2>Service Workers & NG5</h2>
+                Getting Started - New Project<br><br>
+
+                <br>
+                <code>
+                    ng new my-project --service-worker
+                </code>
+
+                <aside class="notes">
+                    <p>For a new project simply use the switch at when the project is newed up</p>
+                    <br>
+                    <code>
+                        ng new my-project --service-worker
+                    </code>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Service Workers & NG5</h2>
+                Getting Started - Existing Project<br><br>
+
+                <br>
+                <ol>
+                    <li>Add the service worker package</li>
+                    <li>Enable service worker build support in the CLI</li>
+                    <li>Import and register the service worker</li>
+                    <li>
+                        Create the service worker configuration file, which specifies
+                        the caching behaviors and other settings
+                    </li>
+                    <li>Build the project. Ng build</li>
+                </ol>
+
+                <aside class="notes">
+                    To add a service worker to an existing app:
+                    <ol>
+                        <li>Add the service worker package — @angular/service-worker</li>
+                        <li>Enable service worker build support in the CLI. — angular-cli.json</li>
+                        <li>Import and register the service worker. —app.module.ts</li>
+                        <li>
+                            Create the service worker configuration file, which specifies
+                            the caching behaviors and other settings. /src/ngsw-config.json
+                        </li>
+                        <li>Build the project. Ng build —prod</li>
+                    </ol>
+
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Build & Test</h2>
+
+                <ol>
+                    <li>ng build --prod</li>
+                    <li>http-server dist -a address -p port</li>
+                    <li>open chrome goto localhost:port</li>
+                </ol>
+
+                <aside class="notes">
+                    <ol>
+                        <li>ng build --prod</li>
+                        <li>http-server dist -a address -p port</li>
+                        <li>open chrome goto localhost:port</li>
+                    </ol>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Serving with http-server</h2>
+
+                <p>
+                    ng serve does not work with service workers
+
+                </p>
+                <p>
+                    the angular.io guide used http-server
+                </p>
+
+                <aside class="notes">
+                    <p>
+                        Because ng serve does not work with service workers, you must use a seperate HTTP server to
+                        test your project locally. You can use any HTTP server. The example below uses the http-server 
+                        package from npm. To reduce the possibility of conflicts, test on a dedicated port
+                    </p>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>What gets cached?</h2>
+
+                <p>
+                    The ngsw-config.json boilerplate configuration is set up to cache the specific
+                    resources used by the CLI:
+                </p>
+                <ul>
+                    <li>index.html</li>
+                    <li>favicon.ico</li>
+                    <li>Build artifacts (JS and CSS bundles)</li>
+                    <li>Anything under assets</li>
+                </ul>
+
+                <aside class="notes">
+                    <p>
+                        The ngsw-config.json boilerplate configuration is set up to cache the specific
+                        resources used by the CLI:
+                    </p>
+                    <ul>
+                        <li>index.html</li>
+                        <li>favicon.ico</li>
+                        <li>Build artifacts (JS and CSS bundles)</li>
+                        <li>Anything under assets</li>
+                    </ul>
+
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>InstallMode &<br> Caching Strategies</h2>
+                <ul>
+                    <li>InstallMode
+                        <ul>
+                            <li>prefetch</li>
+                            <li>lazy</li>
+                        </ul>
+                    </li>
+                    <li>Caching Strategy
+                        <ul>
+                            <li>Performance</li>
+                            <li>Freshness</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <aside class="notes">
+                    <h2>InstallMode & Caching Strategies</h2>
+                    <ul>
+                        <li>InstallMode
+                            <ul>
+                                <li>
+                                    prefetch tells the Angular service worker to fetch every single listed
+                                    resource while it's caching the current version of the app. This is
+                                    bandwidth-intensive but ensures resources are available whenever they're
+                                    requested, even if the browser is currently offline.
+                                </li>
+                                <li>lazy does not cache any of the resources up front. Instead, the
+                                    Angular service worker only caches resources for which it receives
+                                    requests. This is an on-demand caching mode. Resources that are never
+                                    requested will not be cached. This is useful for things like images at
+                                    different resolutions, so the service worker only caches the correct assets
+                                    for the particular screen and orientation.</li>
+                            </ul>
+                        </li>
+                        <li>Caching Strategy
+                            <ul>
+                                <li>Performance pulls from cache if the data is there,
+                                    then immediatly checks with the network to get any new data
+                                </li>
+                                <li>Freshness favors the network first and if the timeout is met it pulls from cache</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </aside>
+            </section>
+        </section>
+
+
+        <section>
+            <section class="slide">
+                <h2>Service Workers &<br> Pinnacol Projects</h2>
                 <p>So what now? How easy will it be to add service workers to our projects? Certs? Alerts? AQ?</p>
 
                 <aside class="notes">
@@ -447,7 +686,7 @@
 
         <section>
             <section class="slide">
-                <h2>Service Workers & Pinnacol Projects</h2>
+                <h2>Service Workers &<br> Pinnacol Projects</h2>
                 <p>Archecture will be key both on the UI and API side</p>
 
                 <ul>
@@ -460,7 +699,7 @@
                 </ul>
 
                 <aside class="notes">
-                    <h2>Service Workers & Pinnacol Projects</h2>
+                    <h2>Service Workers &<br> Pinnacol Projects</h2>
                     <p>Archecture will be key both on the UI and API side</p>
 
                     <ul>
@@ -487,24 +726,24 @@
             </section>
         </section>
 
-        <section>
-            <section class="slide">
-                How do we know if offline?
-                - Didn’t see a great way to know this, we don’t just want to know if offline, aka error interceptor, we
-                want
-                to know when we are back online
-                - I had to trap the error from my request and update an online bool in the component
+        <!--<section>-->
+            <!--<section class="slide">-->
+                <!--How do we know if offline?-->
+                <!-- - Didn’t see a great way to know this, we don’t just want to know if offline, aka error interceptor, we-->
+                <!--want-->
+                <!--to know when we are back online-->
+                <!-- - I had to trap the error from my request and update an online bool in the component-->
 
-                How do we structure apps for PWA’s?
-                - URL’s should contain everything needed to address the specific data
-                —- example cookie containing policy info is not ideal.
-                —- true resource based REST makes this work much better with resources having a immutable address
-                —- try to cut down on unneeded data for the sake of storage space and transit payload payload size
+                <!--How do we structure apps for PWA’s?-->
+                <!-- - URL’s should contain everything needed to address the specific data-->
+                <!--—- example cookie containing policy info is not ideal.-->
+                <!--—- true resource based REST makes this work much better with resources having a immutable address-->
+                <!--—- try to cut down on unneeded data for the sake of storage space and transit payload payload size-->
 
-                - SW will not start if interval is used :(
-                - Routing was an issue…. Perhaps still is for deep linking
-            </section>
-        </section>
+                <!-- - SW will not start if interval is used :(-->
+                <!-- - Routing was an issue…. Perhaps still is for deep linking-->
+            <!--</section>-->
+        <!--</section>-->
 
     </div>
 </div>
