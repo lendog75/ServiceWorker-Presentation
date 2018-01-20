@@ -66,31 +66,29 @@
             <section id="fragments">
                 <h2>What exactly is a PWA?</h2>
                 <p>
-                    A Progressive Web Apps is a web app that has user experiences that are:
+                    A Progressive Web Apps has user experiences that are:
                 </p>
                 <section class="fragment fade-up">
                     <ul>
-                        <li>reliable - Load instantly and never show the downasaur, even in uncertain network
-                            conditions
+                        <li>reliable
                         </li>
-                        <li>fast - Respond quickly to user interactions with silky smooth animations and no janky
-                            scrolling
+                        <li>fast
                         </li>
                         <li>
-                            engaging - Feel like a natural app on the device, with an immersive user experience
+                            engaging
                         </li>
                     </ul>
                 </section>
                 <aside class="notes">
                     <ul>
-                        <li>reliable - Load instantly and never show the downasaur, even in uncertain network
+                        <li>reliable - It should load instantly and never show the downasaur, even in uncertain network
                             conditions
                         </li>
-                        <li>fast - Respond quickly to user interactions with silky smooth animations and no janky
+                        <li>fast - It should respond quickly to user interactions with silky smooth animations and no wonky
                             scrolling
                         </li>
                         <li>
-                            engaging - Feel like a natural app on the device, with an immersive user experience
+                            engaging - It should feel like a natural app on the device, with an immersive user experience
                         </li>
                     </ul>
                 </aside>
@@ -113,9 +111,7 @@
                             to load instantly, regardless of the network state.
                         </li>
                     </ul>
-
                 </aside>
-
             </section>
         </section>
 
@@ -236,24 +232,24 @@
 
         <section>
             <section class="slide">
-                <h2>What exactly is a Service Worker?</h2>
+                <h2>So what exactly is a Service Worker?</h2>
                 <p>...and what can it do</p>
                 <ul>
                     <li>A service worker is a script (JS) that your browser runs in the background</li>
-                    <li>intercept and handle network requests to manage a cache of responses</li>
-                    <li>push notifications</li>
-                    <li>background sync</li>
-                    <li>periodic sync and geofencing (future)</li>
+                    <li>it intercept and handles network requests to manage a cache of responses</li>
+                    <li>has push notifications apis</li>
+                    <li>can do background sync</li>
+                    <li>will have periodic sync and geofencing (future)</li>
                 </ul>
 
                 <aside class="notes">
                     <ul>
-                        <li>A service worker is a script (JS) that your browser runs in the background</li>
+                        <li>A service worker is a script that your browser runs in the background</li>
                         <li>it is separate from the web page</li>
-                        <li>It can...</li>
                         <li>
-                            intercept and handle network requests to manage a cache of responses,
-                            think of it as a client-side proxy and puts you in control
+                            it intercepts and handles network requests to manage a cache of responses,
+                            think of it as a client-side proxy and puts you in control...
+
                             of the cache and how to respond to resource requests by pre-caching key resources you can
                             eliminate the dependence on the network, ensuring an instant and reliable experience for
                             your users.
@@ -266,7 +262,7 @@
                                 <li>geofencing</li>
                             </ul>
                         </li>
-                        <li>The core feature discussed in this presentation is the ability to
+                        <li>The core feature discussed today is the ability to
                             intercept and handle network requests
                         </li>
                     </ul>
@@ -288,21 +284,27 @@
                 <aside class="notes">
                     <ul>
                         <li>
-                            it can't access the DOM directly...Instead, a service worker can communicate with the pages
-                            it controls by responding to
-                            messages sent via the postMessage interface, and those pages can manipulate the
+                            it can't access the DOM directly, Instead, a service worker can communicate with the pages
+                            it controlsthrough messaging...
+
+                            and the postMessage interface, and those pages can manipulate the
                             DOM if needed
                         </li>
                         <li>
-                            It's terminated when not in use, and restarted when it's next needed, so you cannot rely
+                            It's terminated when not in use, and restarted when it's next needed...
+
+                            so you cannot rely
                             on global state within a service worker's onfetch and onmessage handlers.
                         </li>
                         <li>
-                            service workers make extensive use of promises, so for those who are new to promises,
+                            service workers make extensive use of promises...
+
+                            so for those who are new to promises,
                             you shoud read up a bit before going too far
                         </li>
                         <li>
-                            a service worker is essentially a programmable network proxy
+                            a service worker is essentially a programmable network proxy...
+
                             this allows you to control how network requests from your page are handled
                         </li>
                         <li>
@@ -322,8 +324,31 @@
                 <aside class="notes">
                     So can we user Service Workers?
                     <p>
-                        I say "yes we can!" Wile they are not fully supported by all browsers, those who cant use them
-                        should still work, they just dont get all the benefits </p>
+                        I say "yes we can!" Wile they are not fully supported by all browsers, those that do
+                        (chrome/firefox) get the benefits and the others are un effected</p>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>Service Worker Use Cases?</h2>
+
+                <section class="fragment fade-up">
+                    <ul>
+                        <li>
+                            Case 1
+                        </li>
+                        <li>
+                            Case 2
+                        </li>
+                        <li>
+                            Case 3
+                        </li>
+                    </ul>
+                </section>
+                <aside class="notes">
+
                 </aside>
             </section>
         </section>
@@ -346,7 +371,8 @@
                 <aside class="notes">
                     <ul>
                         <li>
-                            Your origin is given a certain amount of free space to do what it wants with.
+                            Your origin is given a certain amount of free space to do what it wants with...
+
                             That free space is shared between all
                             origin storage: LocalStorage, IndexedDB, Filesystem, and of course Caches.
                         </li>
@@ -354,9 +380,9 @@
                             The amount you get isn't spec'd, it will differ depending on device and storage conditions.
                         </li>
                         <li>
-                            Ofcourse, like all browser storage, the browser is free to throw it away if the device
-                            becomes under
-                            storage pressure.
+                            Ofcourse, like all browser storage, the browser is free to throw away your cached items...
+
+                            if the device is under storage pressure.
                         </li>
                     </ul>
                 </aside>
@@ -409,60 +435,60 @@
                 <img src="https://cdn-images-1.medium.com/max/1600/1*75SOUIEW4izzHUoSYmxnTg.png">
 
                 <aside class="notes">
-                    <p>As of version 5, Angular ships with a service worker!!! We can use it to provide increased
-                        reliability and performance to our stakeholders</p>
+                    <p>As of version 5, Angular ships with a service worker... It is up to us to use it to
+                        provide increased reliability and performance to our stakeholders</p>
                 </aside>
             </section>
         </section>
 
 
-        <section>
-            <section class="slide">
+        <!--<section>-->
+            <!--<section class="slide">-->
 
-                <p>designed to meet the following goals:</p>
-                <ul>
-                    <li>
-                        Caching an application is like installing a native application
-                    </li>
-                    <li>
-                        A running application continues to run with the same version of all files
-                    </li>
-                    <li>
-                        When users refresh the application, they see the latest fully cached version
-                    </li>
-                    <li>
-                        Updates happen in the background, relatively quickly after changes are published
-                    </li>
-                    <li>
-                        The service worker conserves bandwidth when possible
-                    </li>
-                </ul>
-                <aside class="notes">
-                    The Angular service worker's has been designed to meet the following goals:
-                    <ul>
-                        <li>
-                            Caching an application is like installing a native application. The application is
-                            cached as one unit, and all files update together
-                        </li>
-                        <li>
-                            A running application continues to run with the same version of all files. It does not
-                            suddenly start receiving cached files from a newer version, which are likely incompatible
-                        </li>
-                        <li>
-                            When users refresh the application, they see the latest fully cached version. New tabs
-                            load the latest cached code
-                        </li>
-                        <li>Updates happen in the background, relatively quickly after changes are published.
-                            The previous version of the application is served until an update is installed and ready
-                        </li>
-                        <li>
-                            The service worker conserves bandwidth when possible. Resources are only downloaded
-                            if they've changed
-                        </li>
-                    </ul>
-                </aside>
-            </section>
-        </section>
+                <!--<p>designed to meet the following goals:</p>-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--Caching an application is like installing a native application-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--A running application continues to run with the same version of all files-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--When users refresh the application, they see the latest fully cached version-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--Updates happen in the background, relatively quickly after changes are published-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--The service worker conserves bandwidth when possible-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<aside class="notes">-->
+                    <!--The Angular service worker's has been designed to meet the following goals:-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--Caching an application is like installing a native application. The application is-->
+                            <!--cached as one unit, and all files update together-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--A running application continues to run with the same version of all files. It does not-->
+                            <!--suddenly start receiving cached files from a newer version, which are likely incompatible-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--When users refresh the application, they see the latest fully cached version. New tabs-->
+                            <!--load the latest cached code-->
+                        <!--</li>-->
+                        <!--<li>Updates happen in the background, relatively quickly after changes are published.-->
+                            <!--The previous version of the application is served until an update is installed and ready-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--The service worker conserves bandwidth when possible. Resources are only downloaded-->
+                            <!--if they've changed-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</aside>-->
+            <!--</section>-->
+        <!--</section>-->
 
 
         <section>
