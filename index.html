@@ -84,11 +84,13 @@
                         <li>reliable - It should load instantly and never show the downasaur, even in uncertain network
                             conditions
                         </li>
-                        <li>fast - It should respond quickly to user interactions with silky smooth animations and no wonky
+                        <li>fast - It should respond quickly to user interactions with silky smooth animations and no
+                            wonky
                             scrolling
                         </li>
                         <li>
-                            engaging - It should feel like a natural app on the device, with an immersive user experience
+                            engaging - It should feel like a natural app on the device, with an immersive user
+                            experience
                         </li>
                     </ul>
                 </aside>
@@ -160,9 +162,7 @@
                             re-engage users with web push notifications.
                         </li>
                         <li>
-                            The Web App Manifest allows you to control how your app appears and how it's launched. You
-                            can specify home screen icons, the page to load when the app is launched, screen
-                            orientation,and even whether or not to show the browser chrome.
+                            The Web App Manifest allows you to control how your app appears and how it's launched...<br><br>
                         </li>
                     </ul>
                 </aside>
@@ -170,70 +170,70 @@
         </section>
 
         <section>
-            <h2>PWA Checklist</h2>
-            <ul>
-                <li>site is required to be served over HTTPS</li>
-                <li>pages are responsive on tablets & mobile devices</li>
-                <li>all app URLs load while offline</li>
-                <li>metadata provided for Add to Home screen</li>
-            </ul>
-
-            <aside class="notes">
+            <section class="slide">
+                <h2>PWA Checklist</h2>
                 <ul>
                     <li>site is required to be served over HTTPS</li>
-                        <ul>
-                            <li>note: there is a very limited exception for localhost</li>
-                        </ul>
-                    </li>
                     <li>pages are responsive on tablets & mobile devices</li>
                     <li>all app URLs load while offline</li>
                     <li>metadata provided for Add to Home screen</li>
                 </ul>
-            </aside>
 
-        </section>
+                <aside class="notes">
+                    <ul>
+                        <li>site is required to be served over HTTPS</li>
+                        <ul>
+                            <li>note: there is a very limited exception for localhost</li>
+                        </ul>
+                        </li>
+                        <li>pages are responsive on tablets & mobile devices</li>
+                        <li>all app URLs load while offline</li>
+                        <li>metadata provided for Add to Home screen</li>
+                    </ul>
+                </aside>
+            </section>
 
-        <section>
-            <h2>PWA Checklist - continued</h2>
-            <ul>
-                <li>load fast even on 3G</li>
-                <li>site works cross-browser</li>
-                <li>page transitions don't feel like they block on the network</li>
-                <li>each page has a URL</li>
-            </ul>
-            <br><br>
-            <small>For those who like to go above and beyond, check out the
-                <a href="https://developers.google.com/web/progressive-web-apps/checklist#exemplary">
-                    Exemplary PWA Checklist
-                </a>
-            </small>
-
-
-            <aside class="notes">
+            <section class="slide">
                 <ul>
                     <li>load fast even on 3G</li>
                     <li>site works cross-browser</li>
                     <li>page transitions don't feel like they block on the network</li>
                     <li>each page has a URL</li>
                 </ul>
+                <br><br>
+                <small>For those who like to go above and beyond, check out the
+                    <a href="https://developers.google.com/web/progressive-web-apps/checklist#exemplary">
+                        Exemplary PWA Checklist
+                    </a>
+                </small>
 
-                <p>For those who like to go above and beyond, check out the Exemplary PWA Checklist
-                </p>
-            </aside>
+                <aside class="notes">
+                    <ul>
+                        <li>load fast even on 3G</li>
+                        <li>site works cross-browser</li>
+                        <li>page transitions don't feel like they block on the network</li>
+                        <li>each page has a URL</li>
+                    </ul>
+
+                    <p>For those who like to go above and beyond, check out the Exemplary PWA Checklist
+                    </p>
+                </aside>
+            </section>
         </section>
 
         <section>
             <h1>Service Workers</h1>
             <aside class="notes">
                 <p>Service Workers am i right?</p>
-                <p>Really though...Much of the promises made by PWAs are achived by the arrival of the service worker</p>
+                <p>Really though...Much of the promises made by PWAs are achived by the arrival of the service
+                    worker</p>
             </aside>
         </section>
 
         <section>
             <section class="slide">
                 <h2>So what exactly is a Service Worker?</h2>
-                <p>...and what can it do</p>
+
                 <ul>
                     <li>A service worker is a script that the browser runs in the background</li>
                     <li>it intercepts and handles network requests, to manage a cache of responses</li>
@@ -248,7 +248,7 @@
                         <li>it is separate from the web page</li>
                         <li>
                             it intercepts and handles network requests to manage a cache of responses,
-                            think of it as a client-side proxy and puts you in control...
+                            think of it as a client-side proxy and puts you in control...<br><br>
 
                             of the cache and how to respond to resource requests by pre-caching key resources you can
                             eliminate the dependence on the network, ensuring an instant and reliable experience for
@@ -285,31 +285,99 @@
                     <ul>
                         <li>
                             it can't access the DOM directly, Instead, a service worker can communicate with the pages
-                            it controlsthrough messaging...
+                            it controlsthrough messaging...<br><br>
 
                             and the postMessage interface, and those pages can manipulate the
                             DOM if needed
                         </li>
                         <li>
-                            It's terminated when not in use, and restarted when it's next needed...
+                            It's terminated when not in use, and restarted when it's next needed...<br><br>
 
                             so you cannot rely
                             on global state within a service worker's onfetch and onmessage handlers.
                         </li>
                         <li>
-                            service workers make extensive use of promises...
+                            service workers make extensive use of promises...<br><br>
 
                             so for those who are new to promises,
                             you shoud read up a bit before going too far
                         </li>
                         <li>
-                            a service worker is essentially a programmable network proxy...
+                            a service worker is essentially a programmable network proxy...<br><br>
 
                             this allows you to control how network requests from your page are handled
                         </li>
                         <li>
                             If there is information that you need to persist and reuse across restarts, service workers
                             do have access to the IndexedDB API
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
+                <h2>What can be Cached</h2>
+                <ul>
+                    <li>
+                        assets such as images, and json files
+                    </li>
+                    <li>
+                        code, modules including dependencies
+                    </li>
+                    <li>
+                        external things like content from a CDN
+                    </li>
+                    <li>
+                        api data
+                    </li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            assets such as images, and json files
+                        </li>
+                        <li>
+                            code, modules including dependencies
+                        </li>
+                        <li>
+                            external things like content from a CDN
+                        </li>
+                        <li>
+                            api data
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section class="slide">
+                <h2>Other Caching Notes</h2>
+
+                <p>
+                    The amount of available space space isn't spec'd, instead it is governed by the origin
+                </p>
+
+
+                <aside class="notes">
+                    <p>
+                        The amount of available space space isn't spec'd, instead it is governed by the origin
+                    </p>
+
+                    <ul>
+                        <li>
+                            That free space is shared between all
+                            origin storage: LocalStorage, IndexedDB, Filesystem, and of course Caches.
+                        </li>
+                        <li>
+                            The amount you get isn't spec'd, it will differ depending on device and storage conditions.
+                        </li>
+                        <li>
+                            Ofcourse, like all browser storage, the browser is free to throw away your cached
+                            items...<br><br>
+
+                            if the device is under storage pressure.
                         </li>
                     </ul>
                 </aside>
@@ -355,74 +423,14 @@
 
         <section>
             <section class="slide">
+                <h1>Questions?</h1>
+            </section>
+        </section>
+
+        <section>
+            <section class="slide">
                 <h2>Where does the Angular framework come into play</h2>
                 <img src="https://angularfirebase.com/images/thumbs/ngsw-13.png">
-            </section>
-        </section>
-
-        <section>
-            <section class="slide">
-                <h2>Caching Notes</h2>
-                <ul>
-                    <li>The amount of space is governed by the origin</li>
-                    <li>The amount you get isn't spec'd</li>
-                </ul>
-
-                <aside class="notes">
-                    <ul>
-                        <li>
-                            Your origin is given a certain amount of free space to do what it wants with...
-
-                            That free space is shared between all
-                            origin storage: LocalStorage, IndexedDB, Filesystem, and of course Caches.
-                        </li>
-                        <li>
-                            The amount you get isn't spec'd, it will differ depending on device and storage conditions.
-                        </li>
-                        <li>
-                            Ofcourse, like all browser storage, the browser is free to throw away your cached items...
-
-                            if the device is under storage pressure.
-                        </li>
-                    </ul>
-                </aside>
-            </section>
-        </section>
-
-        <section>
-            <section class="slide">
-                <h2>What can be Cached</h2>
-                <ul>
-                    <li>
-                        assets such as images, and json files
-                    </li>
-                    <li>
-                        code, modules including dependencies
-                    </li>
-                    <li>
-                        external things like content from a CDN
-                    </li>
-                    <li>
-                        api data
-                    </li>
-                </ul>
-
-                <aside class="notes">
-                    <ul>
-                        <li>
-                            assets such as images, and json files
-                        </li>
-                        <li>
-                            code, modules including dependencies
-                        </li>
-                        <li>
-                            external things like content from a CDN
-                        </li>
-                        <li>
-                            api data
-                        </li>
-                    </ul>
-                </aside>
             </section>
         </section>
 
@@ -439,56 +447,52 @@
                         provide increased reliability and performance to our stakeholders</p>
                 </aside>
             </section>
+
+            <section class="slide">
+                <p>designed to meet the following goals:</p>
+                <ul>
+                    <li>
+                        Caching an application is like installing a native application
+                    </li>
+                    <li>
+                        A running application continues to run with the same version of all files
+                    </li>
+                    <li>
+                        When users refresh the application, they see the latest fully cached version
+                    </li>
+                    <li>
+                        Updates happen in the background, relatively quickly after changes are published
+                    </li>
+                    <li>
+                        The service worker conserves bandwidth when possible
+                    </li>
+                </ul>
+                <aside class="notes">
+                    The Angular service worker's has been designed to meet the following goals:
+                    <ul>
+                        <li>
+                            Caching an application is like installing a native application. The application is
+                            cached as one unit, and all files update together
+                        </li>
+                        <li>
+                            A running application continues to run with the same version of all files. It does not
+                            suddenly start receiving cached files from a newer version, which are likely incompatible
+                        </li>
+                        <li>
+                            When users refresh the application, they see the latest fully cached version. New tabs
+                            load the latest cached code
+                        </li>
+                        <li>Updates happen in the background, relatively quickly after changes are published.
+                            The previous version of the application is served until an update is installed and ready
+                        </li>
+                        <li>
+                            The service worker conserves bandwidth when possible. Resources are only downloaded
+                            if they've changed
+                        </li>
+                    </ul>
+                </aside>
+            </section>
         </section>
-
-
-        <!--<section>-->
-            <!--<section class="slide">-->
-
-                <!--<p>designed to meet the following goals:</p>-->
-                <!--<ul>-->
-                    <!--<li>-->
-                        <!--Caching an application is like installing a native application-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--A running application continues to run with the same version of all files-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--When users refresh the application, they see the latest fully cached version-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--Updates happen in the background, relatively quickly after changes are published-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--The service worker conserves bandwidth when possible-->
-                    <!--</li>-->
-                <!--</ul>-->
-                <!--<aside class="notes">-->
-                    <!--The Angular service worker's has been designed to meet the following goals:-->
-                    <!--<ul>-->
-                        <!--<li>-->
-                            <!--Caching an application is like installing a native application. The application is-->
-                            <!--cached as one unit, and all files update together-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--A running application continues to run with the same version of all files. It does not-->
-                            <!--suddenly start receiving cached files from a newer version, which are likely incompatible-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--When users refresh the application, they see the latest fully cached version. New tabs-->
-                            <!--load the latest cached code-->
-                        <!--</li>-->
-                        <!--<li>Updates happen in the background, relatively quickly after changes are published.-->
-                            <!--The previous version of the application is served until an update is installed and ready-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--The service worker conserves bandwidth when possible. Resources are only downloaded-->
-                            <!--if they've changed-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</aside>-->
-            <!--</section>-->
-        <!--</section>-->
 
 
         <section>
@@ -523,13 +527,13 @@
                 Getting Started - New Project<br><br>
 
                 <br>
-                <code>
-                    ng new my-project --service-worker
-                </code>
+                <pre><code data-trim data-noescape> ng new my-project --service-worker</code></pre>
+
 
                 <aside class="notes">
                     <p>For a new project simply use the switch at when the project is newed up</p>
                     <br>
+
                     <code>
                         ng new my-project --service-worker
                     </code>
@@ -589,6 +593,7 @@
                     </ol>
                 </aside>
             </section>
+
         </section>
 
         <section>
@@ -597,7 +602,6 @@
 
                 <p>
                     ng serve does not work with service workers
-
                 </p>
                 <p>
                     the angular.io guide used http-server
@@ -678,7 +682,8 @@
                                     requests. This is an on-demand caching mode. Resources that are never
                                     requested will not be cached. This is useful for things like images at
                                     different resolutions, so the service worker only caches the correct assets
-                                    for the particular screen and orientation.</li>
+                                    for the particular screen and orientation.
+                                </li>
                             </ul>
                         </li>
                         <li>Caching Strategy
@@ -686,7 +691,8 @@
                                 <li>Performance pulls from cache if the data is there,
                                     then immediatly checks with the network to get any new data
                                 </li>
-                                <li>Freshness favors the network first and if the timeout is met it pulls from cache</li>
+                                <li>Freshness favors the network first and if the timeout is met it pulls from cache
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -741,33 +747,27 @@
 
         <section>
             <section class="slide">
-                <h1>Questions?</h1>
-            </section>
-        </section>
-
-        <section>
-            <section class="slide">
                 <h1>Demo Time!</h1>
             </section>
         </section>
 
         <!--<section>-->
-            <!--<section class="slide">-->
-                <!--How do we know if offline?-->
-                <!-- - Didn’t see a great way to know this, we don’t just want to know if offline, aka error interceptor, we-->
-                <!--want-->
-                <!--to know when we are back online-->
-                <!-- - I had to trap the error from my request and update an online bool in the component-->
+        <!--<section class="slide">-->
+        <!--How do we know if offline?-->
+        <!-- - Didn’t see a great way to know this, we don’t just want to know if offline, aka error interceptor, we-->
+        <!--want-->
+        <!--to know when we are back online-->
+        <!-- - I had to trap the error from my request and update an online bool in the component-->
 
-                <!--How do we structure apps for PWA’s?-->
-                <!-- - URL’s should contain everything needed to address the specific data-->
-                <!--—- example cookie containing policy info is not ideal.-->
-                <!--—- true resource based REST makes this work much better with resources having a immutable address-->
-                <!--—- try to cut down on unneeded data for the sake of storage space and transit payload payload size-->
+        <!--How do we structure apps for PWA’s?-->
+        <!-- - URL’s should contain everything needed to address the specific data-->
+        <!--—- example cookie containing policy info is not ideal.-->
+        <!--—- true resource based REST makes this work much better with resources having a immutable address-->
+        <!--—- try to cut down on unneeded data for the sake of storage space and transit payload payload size-->
 
-                <!-- - SW will not start if interval is used :(-->
-                <!-- - Routing was an issue…. Perhaps still is for deep linking-->
-            <!--</section>-->
+        <!-- - SW will not start if interval is used :(-->
+        <!-- - Routing was an issue…. Perhaps still is for deep linking-->
+        <!--</section>-->
         <!--</section>-->
 
     </div>
@@ -791,23 +791,23 @@
         dependencies: [
             {
                 src: 'lib/js/classList.js', condition: function () {
-                    return !document.body.classList;
-                }
+                return !document.body.classList;
+            }
             },
             {
                 src: 'plugin/markdown/marked.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                }
+                return !!document.querySelector('[data-markdown]');
+            }
             },
             {
                 src: 'plugin/markdown/markdown.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                }
+                return !!document.querySelector('[data-markdown]');
+            }
             },
             {
                 src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                    hljs.initHighlightingOnLoad();
-                }
+                hljs.initHighlightingOnLoad();
+            }
             },
             {src: 'plugin/search/search.js', async: true},
             {src: 'plugin/zoom-js/zoom.js', async: true},
