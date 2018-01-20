@@ -172,7 +172,7 @@
         <section>
             <h2>PWA Checklist</h2>
             <ul>
-                <li>site is served over HTTPS</li>
+                <li>site is required to be served over HTTPS</li>
                 <li>pages are responsive on tablets & mobile devices</li>
                 <li>all app URLs load while offline</li>
                 <li>metadata provided for Add to Home screen</li>
@@ -180,7 +180,7 @@
 
             <aside class="notes">
                 <ul>
-                    <li>site is served over HTTPS
+                    <li>site is required to be served over HTTPS</li>
                         <ul>
                             <li>note: there is a very limited exception for localhost</li>
                         </ul>
@@ -196,7 +196,7 @@
         <section>
             <h2>PWA Checklist - continued</h2>
             <ul>
-                <li>first load fast even on 3G</li>
+                <li>load fast even on 3G</li>
                 <li>site works cross-browser</li>
                 <li>page transitions don't feel like they block on the network</li>
                 <li>each page has a URL</li>
@@ -211,7 +211,7 @@
 
             <aside class="notes">
                 <ul>
-                    <li>first load fast even on 3G</li>
+                    <li>load fast even on 3G</li>
                     <li>site works cross-browser</li>
                     <li>page transitions don't feel like they block on the network</li>
                     <li>each page has a URL</li>
@@ -226,7 +226,7 @@
             <h1>Service Workers</h1>
             <aside class="notes">
                 <p>Service Workers am i right?</p>
-                <p>Really though...Much of the promises mad be PWAs are achived by the arrival of service workers</p>
+                <p>Really though...Much of the promises made by PWAs are achived by the arrival of the service worker</p>
             </aside>
         </section>
 
@@ -235,8 +235,8 @@
                 <h2>So what exactly is a Service Worker?</h2>
                 <p>...and what can it do</p>
                 <ul>
-                    <li>A service worker is a script (JS) that your browser runs in the background</li>
-                    <li>it intercept and handles network requests to manage a cache of responses</li>
+                    <li>A service worker is a script that the browser runs in the background</li>
+                    <li>it intercepts and handles network requests, to manage a cache of responses</li>
                     <li>has push notifications apis</li>
                     <li>can do background sync</li>
                     <li>will have periodic sync and geofencing (future)</li>
@@ -244,7 +244,7 @@
 
                 <aside class="notes">
                     <ul>
-                        <li>A service worker is a script that your browser runs in the background</li>
+                        <li>A service worker is a script that the browser runs in the background</li>
                         <li>it is separate from the web page</li>
                         <li>
                             it intercepts and handles network requests to manage a cache of responses,
@@ -275,7 +275,7 @@
                 <h2>Other Characteristics of a Service Worker</h2>
                 <ul>
                     <li>it can't access the DOM directly</li>
-                    <li>it's terminated when not in use</li>
+                    <li>it is terminated when not in use</li>
                     <li>they make extensive use of promises</li>
                     <li>they are basically a programmable network proxy</li>
                 </ul>
@@ -325,7 +325,7 @@
                     So can we user Service Workers?
                     <p>
                         I say "yes we can!" Wile they are not fully supported by all browsers, those that do
-                        (chrome/firefox) get the benefits and the others are un effected</p>
+                        (chrome/firefox) get the benefits while the others are unaffected</p>
                 </aside>
             </section>
         </section>
@@ -400,7 +400,7 @@
                         code, modules including dependencies
                     </li>
                     <li>
-                        External things like content from a CDN
+                        external things like content from a CDN
                     </li>
                     <li>
                         api data
@@ -416,7 +416,7 @@
                             code, modules including dependencies
                         </li>
                         <li>
-                            External things like content from a CDN
+                            external things like content from a CDN
                         </li>
                         <li>
                             api data
@@ -429,13 +429,13 @@
         <section>
             <section class="slide">
                 <h2>Service Workers & NG5</h2>
-                a new day
+                its a a new day
 
                 <p>As of version 5, Angular ships with a service worker!!!</p>
                 <img src="https://cdn-images-1.medium.com/max/1600/1*75SOUIEW4izzHUoSYmxnTg.png">
 
                 <aside class="notes">
-                    <p>As of version 5, Angular ships with a service worker... It is up to us to use it to
+                    <p>As of version 5, Angular ships with a service worker... We get to use it to
                         provide increased reliability and performance to our stakeholders</p>
                 </aside>
             </section>
@@ -505,7 +505,6 @@
 
                 <aside class="notes">
                     To use Angular service workers, you must have the following:
-
                     <ul>
                         <li>Angular 5.0.0 or later</li>
                         <li>Angular CLI 1.6.0 or later</li>
