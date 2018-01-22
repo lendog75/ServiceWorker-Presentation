@@ -169,7 +169,7 @@
                 <ul>
                     <li>site is required to be served over HTTPS</li>
                     <li>pages should be responsive on tablets & mobile devices</li>
-                    <li>all app URLs still load while offline</li>
+                    <li>all app URLs continue to load, even while offline</li>
                     <li>metadata is provided for Add to Home screen</li>
                 </ul>
 
@@ -181,7 +181,7 @@
                         </ul>
                         </li>
                         <li>pages should be responsive on tablets & mobile devices</li>
-                        <li>all app URLs lstill oad while offline</li>
+                        <li>all app URLs continue to load, even while offline</li>
                         <li>metadata provided for Add to Home screen</li>
                     </ul>
                 </aside>
@@ -208,8 +208,8 @@
                     <ul>
                         <li>they load fast even on 3G</li>
                         <li>work cross-browser</li>
-                        <li>page transitions are crisp and dont feel like they are slowed down by the network</li>
-                        <li>fianlly, each page has a URL</li>
+                        <li>page transitions are crisp and there is no network lag</li>
+                        <li>finally, each page has a URL</li>
                     </ul>
 
                     <p>For those who like to go above and beyond, check out the Exemplary PWA Checklist
@@ -246,20 +246,20 @@
                         <li>it is separate from the web page</li>
                         <li>
                             it intercepts and handles network requests to manage a cache of responses,
-                            think of it as a client-side proxy and puts you in control...<br><br>
-
-                            of the cache and how to respond to resource requests by pre-caching key resources you can
-                            eliminate the dependence on the network, ensuring an instant and reliable experience for
-                            your users.
+                            think of it as a client-side proxy, that you in control...
+                            <!--<br><br>-->
+                            <!--of the cache and how to respond to resource requests by pre-caching key resources you can-->
+                            <!--eliminate the dependence on the network, ensuring an instant and reliable experience for-->
+                            <!--your users.-->
                         </li>
-                        <li>Today, they already include features like push notifications and background sync</li>
-                        <li>
-                            In the future, service workers will support other things like
-                            <ul>
-                                <li>periodic sync</li>
-                                <li>geofencing</li>
-                            </ul>
-                        </li>
+                        <!--<li>Today, they already include features like push notifications and background sync</li>-->
+                        <!--<li>-->
+                            <!--In the future, service workers will support other things like-->
+                            <!--<ul>-->
+                                <!--<li>periodic sync</li>-->
+                                <!--<li>geofencing</li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
                         <li>The core feature discussed today is the ability to
                             intercept and handle network requests
                         </li>
@@ -282,32 +282,35 @@
                 <aside class="notes">
                     <ul>
                         <li>
-                            it can't access the DOM directly, Instead, a service worker can communicate with the pages
-                            it controlsthrough messaging...<br><br>
+                            it can't access the DOM directly, Instead, a service worker can communicate with the app pages
+                            it through messaging...
 
-                            and the postMessage interface, and those pages can manipulate the
-                            DOM if needed
+                            <!--<br><br>-->
+                            <!--and the postMessage interface, and those pages can manipulate the-->
+                            <!--DOM if needed-->
                         </li>
                         <li>
-                            It's terminated when not in use, and restarted when it's next needed...<br><br>
-
-                            so you cannot rely
-                            on global state within a service worker's onfetch and onmessage handlers.
+                            It's terminated when not in use, and restarted when it's next needed...
+                            <!--<br><br>-->
+                            <!--so you cannot rely-->
+                            <!--on global state within a service worker's onfetch and onmessage handlers.-->
                         </li>
                         <li>
-                            service workers make extensive use of promises...<br><br>
+                            service workers make extensive use of promises...
 
-                            so for those who are new to promises,
-                            you shoud read up a bit before going too far
+                            <!--<br><br>-->
+                            <!--so for those who are new to promises,-->
+                            <!--you shoud read up a bit before going too far-->
                         </li>
                         <li>
-                            a service worker is essentially a programmable network proxy...<br><br>
+                            and again, a service worker is essentially a programmable network proxy...
 
-                            this allows you to control how network requests from your page are handled
+                            <!--<br><br>-->
+                            <!--this allows you to control how network requests from your page are handled-->
                         </li>
                         <li>
-                            If there is information that you need to persist and reuse across restarts, service workers
-                            do have access to the IndexedDB API
+                            If there is information that needs to persist and be reuseable across restarts, service workers
+                            have access to the IndexedDB API
                         </li>
                     </ul>
                 </aside>
