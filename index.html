@@ -104,6 +104,7 @@
                 <img src="https://developers.google.com/web/progressive-web-apps/images/pwa-reliable.png">
 
                 <aside class="notes">
+                    <h2>Progressive Web Apps aka PWAs, are Reliable</h2>
                     <ul>
                         <li>
                             When launched from the user’s home screen, service workers enable a PWA
@@ -123,9 +124,10 @@
                 <img src="https://developers.google.com/web/progressive-web-apps/images/pwa-fast.png">
 
                 <aside class="notes">
+                    <h2>PWAs are Fast</h2>
                     <ul>
                         <li>
-                            53% of users will abandon a site if it takes longer than 3 seconds to load!
+                            Studies show, 53% of users will abandon a site, if it takes longer than 3 seconds to load!
                         </li>
                         <li>
                             And once loaded, users expect them to be fast
@@ -147,6 +149,7 @@
                 <img src="https://developers.google.com/web/progressive-web-apps/images/pwa-engaging.png">
 
                 <aside class="notes">
+                    <h2>PWAs are Engaging</h2>
                     <ul>
                         <li>
                             Progressive Web Apps are installable and live on the user's home screen, without the need
@@ -156,7 +159,7 @@
                             They offer an immersive full screen experience
                         </li>
                         <li>
-                            The Web App Manifest allows you to control how us app appears and how it's launched...
+                            The Web App Manifest allows you to control how the app appears, and how it's launched...
                         </li>
                     </ul>
                 </aside>
@@ -174,6 +177,7 @@
                 </ul>
 
                 <aside class="notes">
+                    <h2>Now for our PWA Checklist</h2>
                     <ul>
                         <li>site is required to be served over HTTPS</li>
                         <ul>
@@ -182,7 +186,7 @@
                         </li>
                         <li>pages should be responsive on tablets & mobile devices</li>
                         <li>all app URLs continue to load, even while offline</li>
-                        <li>metadata provided for Add to Home screen</li>
+                        <li>and metadata provided to support "Add to Home screen"</li>
                     </ul>
                 </aside>
             </section>
@@ -199,7 +203,7 @@
                 <br><br>
                 <small>For those who like to go above and beyond, check out the
                     <a href="https://developers.google.com/web/progressive-web-apps/checklist#exemplary">
-                        Exemplary PWA Checklist
+                        Exemplary PWA Checklist from our friends at google
                     </a>
                 </small>
 
@@ -241,6 +245,7 @@
                 </ul>
 
                 <aside class="notes">
+                    <h2>So what exactly is a Service Worker?</h2>
                     <ul>
                         <li>A service worker is a script that the browser runs in the background</li>
                         <li>it is separate from the web page</li>
@@ -260,7 +265,7 @@
                                 <!--<li>geofencing</li>-->
                             <!--</ul>-->
                         <!--</li>-->
-                        <li>The core feature discussed today is the ability to
+                        <li>The core feature discussed today, is the ability to
                             intercept and handle network requests
                         </li>
                     </ul>
@@ -280,11 +285,10 @@
                 <br>
                 <img src="https://glue-labs.com/wp-content/uploads/2016/03/aaa9.png">
                 <aside class="notes">
+                    <h2>Other Characteristics of a Service Worker</h2>
                     <ul>
                         <li>
-                            it can't access the DOM directly, Instead, a service worker can communicate with the app pages
-                            it through messaging...
-
+                            it can't access the DOM directly, Instead, service workers communicates with the app through messaging...
                             <!--<br><br>-->
                             <!--and the postMessage interface, and those pages can manipulate the-->
                             <!--DOM if needed-->
@@ -297,22 +301,18 @@
                         </li>
                         <li>
                             service workers make extensive use of promises...
-
                             <!--<br><br>-->
                             <!--so for those who are new to promises,-->
                             <!--you shoud read up a bit before going too far-->
                         </li>
                         <li>
                             and again, a service worker is essentially a programmable network proxy...
-
-                            <!--<br><br>-->
-                            <!--this allows you to control how network requests from your page are handled-->
-                        </li>
-                        <li>
-                            If there is information that needs to persist and be reuseable across restarts, service workers
-                            have access to the IndexedDB API
+                            it caches resource requests, then iterecepts future requests for those resources,
+                            from there it either returns them from cache, depending on the caching strategy
                         </li>
                     </ul>
+
+
                 </aside>
             </section>
         </section>
@@ -322,10 +322,10 @@
                 <h2>What can be Cached</h2>
                 <ul>
                     <li>
-                        assets such as images, and json files
+                        app code/modules including dependencies
                     </li>
                     <li>
-                        code, modules including dependencies
+                        assets such as images and json files
                     </li>
                     <li>
                         external things like content from a CDN
@@ -336,18 +336,20 @@
                 </ul>
 
                 <aside class="notes">
+                    <h2>So What can be Cached?</h2>
                     <ul>
                         <li>
-                            assets such as images, and json files
+                            the modules that make up the app shell, including dependencies.
+                            Allowing the app to immediatly load, instead of waiting for the app code to download again.
                         </li>
                         <li>
-                            code, modules including dependencies
+                            assets such as images and json files
                         </li>
                         <li>
                             external things like content from a CDN
                         </li>
                         <li>
-                            api data
+                            even api data
                         </li>
                     </ul>
                 </aside>
@@ -362,23 +364,21 @@
 
 
                 <aside class="notes">
-                    <p>
-                        The amount of available space space isn't spec'd, instead it is governed by the origin
-                    </p>
+                    <h2>Other Caching Notes</h2>
 
                     <ul>
                         <li>
-                            That free space is shared between all
-                            origin storage: LocalStorage, IndexedDB, Filesystem, and of course Caches.
+                            The actual amount of storage space available isn't expressly included in the spec,
+                            it will differ depending on device and storage conditions.
                         </li>
-                        <li>
-                            The amount you get isn't spec'd, it will differ depending on device and storage conditions.
-                        </li>
-                        <li>
-                            Ofcourse, like all browser storage, the browser is free to throw away your cached
-                            items...<br><br>
 
-                            if the device is under storage pressure.
+                        <li>
+                            available storage space is shared between all
+                            origin storage including LocalStorage, IndexedDB, Filesystem, and of course the Caches.
+                        </li>
+                        <li>
+                            and, like all browser storage, the browser is free to throw away your cached
+                            items at anytime
                         </li>
                     </ul>
                 </aside>
@@ -419,24 +419,19 @@
                             Performance/Caching
                             <ul>
                                 <li>
-                                    Caching "app shell"
-                                </li>
-                                <li>
-                                    Caching assets
-                                </li>
-                                <li>
-                                    Caching api calls
+                                    Caching "app shell", assets, and api calls<br>
+                                    gives our app lightning fast response times usually reserved for native apps
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            Addressing Network Connectivity Issues
+                            Handle network connectivity issues
                             <ul>
                                 <li>
                                     intermitant
                                 </li>
                                 <li>
-                                    offline
+                                    full offline
                                 </li>
                             </ul>
                         </li>
