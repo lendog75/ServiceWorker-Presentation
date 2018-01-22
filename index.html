@@ -104,7 +104,7 @@
                 <img src="https://developers.google.com/web/progressive-web-apps/images/pwa-reliable.png">
 
                 <aside class="notes">
-                    <h2>Progressive Web Apps aka PWAs, are Reliable</h2>
+                    <h5>Progressive Web Apps aka PWAs, are Reliable</h5>
                     <ul>
                         <li>
                             When launched from the user’s home screen, service workers enable a PWA
@@ -124,7 +124,7 @@
                 <img src="https://developers.google.com/web/progressive-web-apps/images/pwa-fast.png">
 
                 <aside class="notes">
-                    <h2>PWAs are Fast</h2>
+                    <h5>PWAs are Fast</h5>
                     <ul>
                         <li>
                             Studies show, 53% of users will abandon a site, if it takes longer than 3 seconds to load!
@@ -149,7 +149,7 @@
                 <img src="https://developers.google.com/web/progressive-web-apps/images/pwa-engaging.png">
 
                 <aside class="notes">
-                    <h2>PWAs are Engaging</h2>
+                    <h5>PWAs are Engaging</h5>
                     <ul>
                         <li>
                             Progressive Web Apps are installable and live on the user's home screen, without the need
@@ -177,7 +177,7 @@
                 </ul>
 
                 <aside class="notes">
-                    <h2>Now for our PWA Checklist</h2>
+                    <h5>Now for our PWA Checklist</h5>
                     <ul>
                         <li>site is required to be served over HTTPS</li>
                         <ul>
@@ -186,7 +186,7 @@
                         </li>
                         <li>pages should be responsive on tablets & mobile devices</li>
                         <li>all app URLs continue to load, even while offline</li>
-                        <li>and metadata provided to support "Add to Home screen"</li>
+                        <li>and metadata is provided to support "Add to Home screen"</li>
                     </ul>
                 </aside>
             </section>
@@ -203,7 +203,7 @@
                 <br><br>
                 <small>For those who like to go above and beyond, check out the
                     <a href="https://developers.google.com/web/progressive-web-apps/checklist#exemplary">
-                        Exemplary PWA Checklist from our friends at google
+                        Exemplary PWA Checklist
                     </a>
                 </small>
 
@@ -216,7 +216,9 @@
                         <li>finally, each page has a URL</li>
                     </ul>
 
-                    <p>For those who like to go above and beyond, check out the Exemplary PWA Checklist
+                    <p>
+                        For those who like to go above and beyond, check out the Exemplary PWA Checklist provided by
+                        our friends at google
                     </p>
                 </aside>
             </section>
@@ -245,13 +247,13 @@
                 </ul>
 
                 <aside class="notes">
-                    <h2>So what exactly is a Service Worker?</h2>
+                    <h5>So what exactly is a Service Worker?</h5>
                     <ul>
                         <li>A service worker is a script that the browser runs in the background</li>
                         <li>it is separate from the web page</li>
                         <li>
                             it intercepts and handles network requests to manage a cache of responses,
-                            think of it as a client-side proxy, that you in control...
+                            think of it as a client-side proxy, that you control...
                             <!--<br><br>-->
                             <!--of the cache and how to respond to resource requests by pre-caching key resources you can-->
                             <!--eliminate the dependence on the network, ensuring an instant and reliable experience for-->
@@ -266,7 +268,8 @@
                             <!--</ul>-->
                         <!--</li>-->
                         <li>The core feature discussed today, is the ability to
-                            intercept and handle network requests
+                            intercept and handle network requests...
+                            (recaps why this is so great)
                         </li>
                     </ul>
                 </aside>
@@ -285,7 +288,7 @@
                 <br>
                 <img src="https://glue-labs.com/wp-content/uploads/2016/03/aaa9.png">
                 <aside class="notes">
-                    <h2>Other Characteristics of a Service Worker</h2>
+                    <h5>A few Other Characteristics of a Service Worker</h5>
                     <ul>
                         <li>
                             it can't access the DOM directly, Instead, service workers communicates with the app through messaging...
@@ -336,7 +339,7 @@
                 </ul>
 
                 <aside class="notes">
-                    <h2>So What can be Cached?</h2>
+                    <h5>So What can be Cached?</h5>
                     <ul>
                         <li>
                             the modules that make up the app shell, including dependencies.
@@ -364,7 +367,7 @@
 
 
                 <aside class="notes">
-                    <h2>Other Caching Notes</h2>
+                    <h5>Other Caching Notes</h5>
 
                     <ul>
                         <li>
@@ -414,6 +417,7 @@
                     </ul>
                 </section>
                 <aside class="notes">
+                    <h5>A few general service worker use cases...</h5>
                     <ul>
                         <li>
                             Performance/Caching
@@ -462,13 +466,14 @@
                 <img src="https://cdn-images-1.medium.com/max/1600/1*75SOUIEW4izzHUoSYmxnTg.png">
 
                 <aside class="notes">
+                    <h5>Service Workers & NG5</h5>
                     <p>As of version 5, Angular ships with a service worker... We get to use it to
                         provide increased reliability and performance to our stakeholders</p>
                 </aside>
             </section>
 
             <section class="slide">
-                <p>designed to meet the following goals:</p>
+                <p>Angulars service worker is designed to meet the following goals:</p>
                 <ul>
                     <li>
                         Caching an application is like installing a native application
@@ -487,7 +492,7 @@
                     </li>
                 </ul>
                 <aside class="notes">
-                    The Angular service worker's has been designed to meet the following goals:
+                    The Angular service worker has been designed to meet the following goals:
                     <ul>
                         <li>
                             Caching an application is like installing a native application. The application is
@@ -517,7 +522,7 @@
         <section>
             <section class="slide">
                 <h2>Service Workers & NG5</h2>
-                Requirements<br><br>
+                Requirements
 
                 <p>To use Angular service workers, you must have the following:</p>
                 <ul>
@@ -527,6 +532,8 @@
                 </ul>
 
                 <aside class="notes">
+                    <h5>Service Workers & NG5</h5>
+                    Requirements
                     To use Angular service workers, you must have the following:
                     <ul>
                         <li>Angular 5.0.0 or later</li>
@@ -550,9 +557,10 @@
 
 
                 <aside class="notes">
+                    <h5>Service Workers & NG5</h5>
+                    Getting Started - New Project
                     <p>For a new project simply use the switch at when the project is newed up</p>
                     <br>
-
                     <code>
                         ng new my-project --service-worker
                     </code>
@@ -605,6 +613,7 @@
                 </ol>
 
                 <aside class="notes">
+                    <h5>Build & Test</h5>
                     <ol>
                         <li>ng build --prod</li>
                         <li>http-server dist -a address -p port</li>
@@ -652,6 +661,7 @@
                 </ul>
 
                 <aside class="notes">
+                    <h5>What gets cached?</h5>
                     <p>
                         The ngsw-config.json boilerplate configuration is set up to cache the specific
                         resources used by the CLI:
@@ -686,7 +696,7 @@
                 </ul>
 
                 <aside class="notes">
-                    <h2>InstallMode & Caching Strategies</h2>
+                    <h5>InstallMode & Caching Strategies</h5>
                     <ul>
                         <li>InstallMode
                             <ul>
@@ -727,7 +737,7 @@
                 <p>So what now? How easy will it be to add service workers to our projects? Certs? Alerts? AQ?</p>
 
                 <aside class="notes">
-                    <h2>Service Workers & Pinnacol Projects</h2>
+                    <h5>Service Workers & Pinnacol Projects</h5>
                     <p>So what now? How easy will it be to add service workers to our projects? Certs? Alerts? AQ?</p>
                 </aside>
             </section>
@@ -749,7 +759,7 @@
                 </ul>
 
                 <aside class="notes">
-                    <h2>Service Workers &<br> Pinnacol Projects</h2>
+                    <h5>Service Workers &<br> Pinnacol Projects</h5>
                     <p>Archecture will be key both on the UI and API side</p>
 
                     <ul>
