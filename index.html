@@ -64,34 +64,34 @@
         </section>
 
         <!--<section>-->
-            <!--<section id="fragments">-->
-                <!--<h2>What exactly is a PWA?</h2>-->
-                <!--<p>-->
-                    <!--A Progressive Web Apps has user experiences that are:-->
-                <!--</p>-->
-                <!--<section class="fragment fade-up">-->
-                    <!--<ul>-->
-                        <!--<li>reliable</li>-->
-                        <!--<li>fast</li>-->
-                        <!--<li>engaging</li>-->
-                    <!--</ul>-->
-                <!--</section>-->
-                <!--<aside class="notes">-->
-                    <!--&lt;!&ndash;<ul>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li>reliable - It should load instantly and never show the downasaur, even in uncertain network&ndash;&gt;-->
-                            <!--&lt;!&ndash;conditions&ndash;&gt;-->
-                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li>fast - It should respond quickly to user interactions with silky smooth animations and no&ndash;&gt;-->
-                            <!--&lt;!&ndash;wonky&ndash;&gt;-->
-                            <!--&lt;!&ndash;scrolling&ndash;&gt;-->
-                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li>&ndash;&gt;-->
-                            <!--&lt;!&ndash;engaging - It should feel like a natural app on the device, with an immersive user&ndash;&gt;-->
-                            <!--&lt;!&ndash;experience&ndash;&gt;-->
-                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-                <!--</aside>-->
-            <!--</section>-->
+        <!--<section id="fragments">-->
+        <!--<h2>What exactly is a PWA?</h2>-->
+        <!--<p>-->
+        <!--A Progressive Web Apps has user experiences that are:-->
+        <!--</p>-->
+        <!--<section class="fragment fade-up">-->
+        <!--<ul>-->
+        <!--<li>reliable</li>-->
+        <!--<li>fast</li>-->
+        <!--<li>engaging</li>-->
+        <!--</ul>-->
+        <!--</section>-->
+        <!--<aside class="notes">-->
+        <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li>reliable - It should load instantly and never show the downasaur, even in uncertain network&ndash;&gt;-->
+        <!--&lt;!&ndash;conditions&ndash;&gt;-->
+        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li>fast - It should respond quickly to user interactions with silky smooth animations and no&ndash;&gt;-->
+        <!--&lt;!&ndash;wonky&ndash;&gt;-->
+        <!--&lt;!&ndash;scrolling&ndash;&gt;-->
+        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li>&ndash;&gt;-->
+        <!--&lt;!&ndash;engaging - It should feel like a natural app on the device, with an immersive user&ndash;&gt;-->
+        <!--&lt;!&ndash;experience&ndash;&gt;-->
+        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+        <!--</aside>-->
+        <!--</section>-->
         <!--</section>-->
 
         <section>
@@ -192,7 +192,7 @@
             </section>
 
             <section class="slide">
-               <p>Additionally...</p>
+                <p>Additionally...</p>
 
                 <ul>
                     <li>they load fast even on 3G</li>
@@ -230,7 +230,7 @@
                 <p>Service Workers am i right?</p>
                 <p>Really though...</p>
 
-               <p> Much of the promises made by PWAs are achived through the arrival of the service worker</p>
+                <p> Much of the promises made by PWAs are achived through the arrival of the service worker</p>
             </aside>
         </section>
 
@@ -277,7 +277,8 @@
                     <h5>A few Other Characteristics of a Service Worker</h5>
                     <ul>
                         <li>
-                            it can't access the DOM directly, Instead, service workers communicates with the app through messaging...
+                            it can't access the DOM directly, Instead, service workers communicates with the app through
+                            messaging...
                         </li>
                         <li>
                             It's terminated when not in use, and restarted when it's next needed...
@@ -387,8 +388,9 @@
                             Performance/Caching
                         </li>
                         <li>
-                            Addressing Network Connectivity Issues
+                            Loss of Connectivity
                         </li>
+                        <li>Client Side Failover</li>
                     </ul>
                 </section>
                 <aside class="notes">
@@ -403,6 +405,7 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>Client Side Failover</li>
                         <li>
                             Handle network connectivity issues
                             <ul>
@@ -418,6 +421,47 @@
                 </aside>
             </section>
         </section>
+
+        <section>
+            <section class="slide">
+                <h2>Service Workers &<br> Pinnacol Projects</h2>
+                <p>Archecture will be key both on the UI and API side</p>
+
+                <ul>
+                    <li>adjust app behaviors based on network availability</li>
+                    <li>cache assets</li>
+                    <li>cache code/modules</li>
+                    <li>cache api data
+                        <ul>
+                            <li>Api response sgit add .
+                                fddfgdfgdfgdltructure</li>
+                        </ul>
+                    </li>
+                    <li>queue updates?</li>
+                    <li>push notifications</li>
+                </ul>
+
+                <aside class="notes">
+                    <h5>Service Workers &<br> Pinnacol Projects</h5>
+                    <p>Archecture will be key both on the UI and API side</p>
+
+                    <ul>
+
+                        <li>adjust app behaviors based on network availability</li>
+                        <li>cache assets</li>
+                        <li>cache code/modules</li>
+                        <li>cache api data
+                            <ul>
+                                <ul>Api response structure - If you want to be able to do cachine of api responses arch is key...  as we will see in the demo</ul>
+                            </ul>
+                        </li>
+                        <li>queue updates?</li>
+                        <li>push notifications</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
 
         <section>
             <section class="slide">
@@ -708,48 +752,48 @@
         </section>
 
 
-        <section>
-            <section class="slide">
-                <h2>Service Workers &<br> Pinnacol Projects</h2>
-                <p>So what now? How easy will it be to add service workers to our projects? Certs? Alerts? AQ?</p>
+        <!--<section>-->
+            <!--<section class="slide">-->
+                <!--<h2>Service Workers &<br> Pinnacol Projects</h2>-->
+                <!--<p>So what now? How easy will it be to add service workers to our projects? Certs? Alerts? AQ?</p>-->
 
-                <aside class="notes">
-                    <h5>Service Workers & Pinnacol Projects</h5>
-                    <p>So what now? How easy will it be to add service workers to our projects? Certs? Alerts? AQ?</p>
-                </aside>
-            </section>
-        </section>
+                <!--<aside class="notes">-->
+                    <!--<h5>Service Workers & Pinnacol Projects</h5>-->
+                    <!--<p>So what now? How easy will it be to add service workers to our projects? Certs? Alerts? AQ?</p>-->
+                <!--</aside>-->
+            <!--</section>-->
+        <!--</section>-->
 
 
-        <section>
-            <section class="slide">
-                <h2>Service Workers &<br> Pinnacol Projects</h2>
-                <p>Archecture will be key both on the UI and API side</p>
+        <!--<section>-->
+            <!--<section class="slide">-->
+                <!--<h2>Service Workers &<br> Pinnacol Projects</h2>-->
+                <!--<p>Archecture will be key both on the UI and API side</p>-->
 
-                <ul>
-                    <li>adjust app behaviors based on network availability</li>
-                    <li>cache assets</li>
-                    <li>cache code/modules</li>
-                    <li>cache api data</li>
-                    <li>queue updates?</li>
-                    <li>push notifications</li>
-                </ul>
+                <!--<ul>-->
+                    <!--<li>adjust app behaviors based on network availability</li>-->
+                    <!--<li>cache assets</li>-->
+                    <!--<li>cache code/modules</li>-->
+                    <!--<li>cache api data</li>-->
+                    <!--<li>queue updates?</li>-->
+                    <!--<li>push notifications</li>-->
+                <!--</ul>-->
 
-                <aside class="notes">
-                    <h5>Service Workers &<br> Pinnacol Projects</h5>
-                    <p>Archecture will be key both on the UI and API side</p>
+                <!--<aside class="notes">-->
+                    <!--<h5>Service Workers &<br> Pinnacol Projects</h5>-->
+                    <!--<p>Archecture will be key both on the UI and API side</p>-->
 
-                    <ul>
-                        <li>adjust app behaviors based on network availability</li>
-                        <li>cache assets</li>
-                        <li>cache code/modules</li>
-                        <li>cache api data</li>
-                        <li>queue updates?</li>
-                        <li>push notifications</li>
-                    </ul>
-                </aside>
-            </section>
-        </section>
+                    <!--<ul>-->
+                        <!--<li>adjust app behaviors based on network availability</li>-->
+                        <!--<li>cache assets</li>-->
+                        <!--<li>cache code/modules</li>-->
+                        <!--<li>cache api data</li>-->
+                        <!--<li>queue updates?</li>-->
+                        <!--<li>push notifications</li>-->
+                    <!--</ul>-->
+                <!--</aside>-->
+            <!--</section>-->
+        <!--</section>-->
 
         <section>
             <section class="slide">
@@ -797,23 +841,23 @@
         dependencies: [
             {
                 src: 'lib/js/classList.js', condition: function () {
-                return !document.body.classList;
-            }
+                    return !document.body.classList;
+                }
             },
             {
                 src: 'plugin/markdown/marked.js', condition: function () {
-                return !!document.querySelector('[data-markdown]');
-            }
+                    return !!document.querySelector('[data-markdown]');
+                }
             },
             {
                 src: 'plugin/markdown/markdown.js', condition: function () {
-                return !!document.querySelector('[data-markdown]');
-            }
+                    return !!document.querySelector('[data-markdown]');
+                }
             },
             {
                 src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                hljs.initHighlightingOnLoad();
-            }
+                    hljs.initHighlightingOnLoad();
+                }
             },
             {src: 'plugin/search/search.js', async: true},
             {src: 'plugin/zoom-js/zoom.js', async: true},
